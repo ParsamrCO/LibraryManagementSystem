@@ -1,0 +1,24 @@
+prompts project2
+
+1.پکیج بندی رو یاد بده چظوری کامل کنم 
+مرحله ۱: کامپایل پروژه
+bash
+./build_and_run.sh build
+
+
+# ۲. ساخت JAR
+echo "Main-Class: Main" > MANIFEST.MF
+jar cfm LibraryManagementSystem.jar MANIFEST.MF -C bin .
+rm MANIFEST.MF
+
+# ۳. تست
+java -jar LibraryManagementSystem.jar
+
+
+2.افزودن maven 
+در این پروژه تا اینجای کار همه چی درست بوده از پکیج بندی گرفته تا کد ها الان ازت میخوام maven رو به پرژم اضافه کنی 
+
+۳.میخوام برای کل کلاس هام unit-test بنویسم
+
+
+
