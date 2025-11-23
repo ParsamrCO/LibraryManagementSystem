@@ -159,13 +159,13 @@ public class StudentMenu {
     
     private void requestBorrow() {
         System.out.println("\n=== درخواست امانت کتاب ===");
-        
+    
         // ابتدا کتاب‌های موجود رو نمایش بده
         BookService bookService = BookService.getInstance();
         List<Book> availableBooks = bookService.getAllBooks().stream()
-                .filter(Book::isAvailable)
-                .toList();
-        
+            .filter(Book::isAvailable)
+            .collect(java.util.stream.Collectors.toList());  // اصلاح این خط
+    
         if (availableBooks.isEmpty()) {
             System.out.println("📚 هیچ کتاب موجودی برای امانت وجود ندارد.");
             return;
